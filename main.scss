@@ -93,8 +93,11 @@
   width: var(--gauge-width);
 
   // ゲージ上の文字関係
-  & > div p {
-    font-size: var(--gauge-font-size);
+  & > div:first-child {
+    align-items: center;
+    & p {
+      font-size: var(--gauge-font-size);
+    }
   }
 
   // ゲージ本体の共通親要素
