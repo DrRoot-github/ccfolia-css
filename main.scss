@@ -1,0 +1,120 @@
+:root {
+  /* ゲージコンテナ(HP,MP等のゲージを収める箱)の幅 */
+  /* --gauge-widthの2倍+8にすると、2本まで（HPとMP等）ゲージが横に並ぶ */
+  --gauge-container-width: 128px;
+
+  /* ゲージ一本あたりの幅 */
+  --gauge-width: 128px;
+
+  /* 画面全体の横幅 */
+  /* これを超えたキャラクターは折り返される */
+  --root-width: 960px;
+
+  /* ゲージの色 それぞれ最大値と現在値 */
+  --gauge-max-color: #008080ff;
+  --gauge-value-color: #30306080;
+
+  /* アイコンの大きさ */
+  --icon-size: 48px;
+
+  /* イニシアチブ値の大きさ(20px以上推奨) */
+  --value-on-icon-size: 20px;
+
+  /* イニシアチブ値のフォントサイズ */
+  --value-on-icon-font-size: 0.75rem;
+
+  /* ゲージ上の文字のサイズ */
+  --gauge-font-size: 13px;
+}
+
+#root > div > [tabindex="0"] {
+  // 全statsエレメントから直近の共通コンテナ
+  // おそらくキャラの数に等しいflexなdivを子に持っている奴のはず
+  & > .sc-oclUV {
+    top: 0;
+    display: flex;
+    flex-wrap: wrap;
+    width: var(--root-width);
+  }
+
+  // ↑の奴以外は邪魔なので消す
+  & > *:not(.sc-oclUV) {
+    display: none;
+  }
+}
+
+// 背景に設定された画像を消す #rootの孫のheader要素の弟あたりにいる
+.sc-tQuYZ {
+  display: none;
+}
+
+// statsアイテム1個のroot要素
+.sc-jWquRx {
+  margin-right: 8px;
+
+  // アイコンの親div
+  & .MuiAvatar-root.MuiAvatar-circular {
+    width: var(--icon-size);
+    height: var(--icon-size);
+    border-width: 0;
+  }
+
+  // アイコン上のイニシアチブ値
+  & > .MuiBadge-root > span {
+    min-width: var(--value-on-icon-size);
+    min-height: var(--value-on-icon-size);
+    right: 5px !important;
+    top: 5px !important;
+    font-size: var(--value-on-icon-font-size);
+  }
+
+  // アイコン本体
+  & > .MuiBadge-root img {
+    width: 100%;
+    height: 100%;
+  }
+
+  // 全ゲージの親div
+  // 画面が小さくなるとゲージが消える 困るのでキャンセル
+  & > div > div {
+    max-width: var(--gauge-container-width);
+    display: flex !important;
+  }
+}
+
+// ゲージ1本分の親div
+.sc-ezWXYA {
+  width: var(--gauge-width);
+
+  // ゲージ上の文字関係
+  & > div p {
+    font-size: var(--gauge-font-size);
+  }
+
+  // ゲージ本体の現在値の方
+  & > div:last-child > div:first-child {
+    background-color: var(--gauge-value-color) !important;
+  }
+
+  // ゲージ本体の最大値の方
+  & > div:last-child > div:last-child {
+    background-color: var(--gauge-max-color) !important;
+  }
+}
+
+// --- その他の余計なものを消す ---
+body {
+  background-color: rgba(0, 0, 0, 0);
+  margin: 0px auto;
+  overflow: hidden;
+}
+
+// 右ペイン
+.MuiPaper-root {
+  display: none;
+}
+
+// right: 375pxを持ってるstatsの祖先がいるので打ち消す
+#root > div > [tabindex="0"] {
+  right: 0 !important;
+}

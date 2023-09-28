@@ -1,0 +1,87 @@
+@charset "UTF-8";
+:root {
+  /* ゲージコンテナ(HP,MP等のゲージを収める箱)の幅 */
+  /* --gauge-widthの2倍+8にすると、2本まで（HPとMP等）ゲージが横に並ぶ */
+  --gauge-container-width: 128px;
+  /* ゲージ一本あたりの幅 */
+  --gauge-width: 128px;
+  /* 画面全体の横幅 */
+  /* これを超えたキャラクターは折り返される */
+  --root-width: 960px;
+  /* ゲージの色 それぞれ最大値と現在値 */
+  --gauge-max-color: #008080ff;
+  --gauge-value-color: #30306080;
+  /* アイコンの大きさ */
+  --icon-size: 48px;
+  /* イニシアチブ値の大きさ(20px以上推奨) */
+  --value-on-icon-size: 20px;
+  /* イニシアチブ値のフォントサイズ */
+  --value-on-icon-font-size: 0.75rem;
+  /* ゲージ上の文字のサイズ */
+  --gauge-font-size: 13px;
+}
+
+#root > div > [tabindex="0"] > .sc-oclUV {
+  top: 0;
+  display: flex;
+  flex-wrap: wrap;
+  width: var(--root-width);
+}
+#root > div > [tabindex="0"] > *:not(.sc-oclUV) {
+  display: none;
+}
+
+.sc-tQuYZ {
+  display: none;
+}
+
+.sc-jWquRx {
+  margin-right: 8px;
+}
+.sc-jWquRx .MuiAvatar-root.MuiAvatar-circular {
+  width: var(--icon-size);
+  height: var(--icon-size);
+  border-width: 0;
+}
+.sc-jWquRx > .MuiBadge-root > span {
+  min-width: var(--value-on-icon-size);
+  min-height: var(--value-on-icon-size);
+  right: 5px !important;
+  top: 5px !important;
+  font-size: var(--value-on-icon-font-size);
+}
+.sc-jWquRx > .MuiBadge-root img {
+  width: 100%;
+  height: 100%;
+}
+.sc-jWquRx > div > div {
+  max-width: var(--gauge-container-width);
+  display: flex !important;
+}
+
+.sc-ezWXYA {
+  width: var(--gauge-width);
+}
+.sc-ezWXYA > div p {
+  font-size: var(--gauge-font-size);
+}
+.sc-ezWXYA > div:last-child > div:first-child {
+  background-color: var(--gauge-value-color) !important;
+}
+.sc-ezWXYA > div:last-child > div:last-child {
+  background-color: var(--gauge-max-color) !important;
+}
+
+body {
+  background-color: rgba(0, 0, 0, 0);
+  margin: 0px auto;
+  overflow: hidden;
+}
+
+.MuiPaper-root {
+  display: none;
+}
+
+#root > div > [tabindex="0"] {
+  right: 0 !important;
+}
