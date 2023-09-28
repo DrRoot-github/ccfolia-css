@@ -5,12 +5,16 @@
   --gauge-container-width: 128px;
   /* ゲージ一本あたりの幅 */
   --gauge-width: 128px;
+  /* ゲージ1本の高さ（縦幅）*/
+  --gauge-height: 16px;
   /* 画面全体の横幅 */
   /* これを超えたキャラクターは折り返される */
   --root-width: 960px;
   /* ゲージの色 それぞれ最大値と現在値 */
-  --gauge-max-color: #008080ff;
-  --gauge-value-color: #30306080;
+  --gauge-max-color: rgb(245, 245, 245);
+  --gauge-value-color: rgb(245, 245, 245);
+  /* ゲージの最大値（ゲージ本体の背景）の透明度 */
+  --gauge-max-opacity: 0.38;
   /* アイコンの大きさ */
   --icon-size: 48px;
   /* イニシアチブ値の大きさ(20px以上推奨) */
@@ -65,11 +69,17 @@
 .sc-ezWXYA > div p {
   font-size: var(--gauge-font-size);
 }
+.sc-ezWXYA > div:last-child {
+  height: var(--gauge-height);
+}
 .sc-ezWXYA > div:last-child > div:first-child {
-  background-color: var(--gauge-value-color) !important;
+  background-color: var(--gauge-max-color) !important;
+  opacity: var(--gauge-max-opacity);
+  height: var(--gauge-height);
 }
 .sc-ezWXYA > div:last-child > div:last-child {
-  background-color: var(--gauge-max-color) !important;
+  background-color: var(--gauge-value-color) !important;
+  height: var(--gauge-height);
 }
 
 body {
