@@ -36,7 +36,7 @@
 #root > div > [tabindex="0"] {
   // 全statsエレメントから直近の共通コンテナ
   // おそらくキャラの数に等しいflexなdivを子に持っている奴のはず
-  & > .sc-oclUV {
+  & > .sc-bwcYJz {
     top: 0;
     display: flex;
     flex-wrap: wrap;
@@ -44,18 +44,18 @@
   }
 
   // ↑の奴以外は邪魔なので消す
-  & > *:not(.sc-oclUV) {
+  & > *:not(.sc-bwcYJz) {
     display: none;
   }
 }
 
 // 背景に設定された画像を消す #rootの孫のheader要素の弟あたりにいる
-.sc-tQuYZ {
+.sc-exqIcj {
   display: none;
 }
 
 // statsアイテム1個のroot要素
-.sc-jWquRx {
+.sc-kBqlQb {
   margin-right: 8px;
 
   // アイコンの親div
@@ -89,7 +89,7 @@
 }
 
 // ゲージ1本分の親div
-.sc-ezWXYA {
+.sc-gggpLg {
   width: var(--gauge-width);
 
   // ゲージ上の文字関係
