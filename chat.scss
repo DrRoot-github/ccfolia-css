@@ -1,0 +1,131 @@
+:root {
+  /* 全体の背景色 */
+  --background-color: #444;
+
+  /* メッセージを区切る線の色 */
+  --divider-color: #ffffff4a;
+
+  /* 名前の文字色・サイズ */
+  --name-color: #2dd5ffee;
+  --name-size: 15px;
+
+  /* 日付の文字色・サイズ */
+  --datetime-color: rgb(252, 89, 89);
+  --datetime-size: 0.875rem;
+
+  /* 本文の文字色とサイズ */
+  --main-text-color: #a7ff70ef;
+  --main-text-size: 0.875rem;
+
+  /* 判定成功/失敗時の文字色 */
+  --main-text-success-color: rgb(71, 197, 255);
+  --main-text-failed-color: #e00d3e;
+
+  /* アイコン画像のサイズと丸み */
+  --icon-size: 40px;
+  --icon-radius: 8px;
+
+  /* スクロールバーの色と丸み */
+  --scroll-bar-color: #506f7c7a;
+  --scroll-bar-radius: 8px;
+}
+
+// memo メインの方と違って、こっちはMui～とかいうクラスが色々当たってるので、
+// 要素に特定のクラスを見つけられればバージョンが変わっても変更がいらない
+
+// 要素全体のroot
+.MuiPaper-elevation0 {
+  background-color: var(--background-color);
+}
+
+// 名前の文字
+.MuiTypography-subtitle2 {
+  font-size: var(--name-size);
+  color: var(--name-color) !important;
+}
+
+// 日付の文字
+.MuiTypography-caption {
+  font-size: var(--datetime-size);
+  color: var(--datetime-color) !important;
+}
+
+// 本文とかの文字
+.MuiTypography-body2 {
+  font-size: var(--main-text-size);
+  color: var(--main-text-color);
+}
+
+// 判定成功時の文字 class特定が必要
+.css-1l6qhgm {
+  color: var(--main-text-success-color) !important;
+}
+
+// 判定失敗時の文字 class特定が必要
+.css-1j13mke {
+  color: var(--main-text-failed-color) !important;
+}
+
+// divider
+.MuiDivider-light {
+  background-color: var(--divider-color);
+}
+
+// icon
+.MuiListItemAvatar-alignItemsFlexStart {
+  // 画像がサイズ問わずいい感じの位置に来るようにする
+  min-width: none !important;
+  margin-top: 0 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  padding: 0 8px;
+
+  & div {
+    width: var(--icon-size);
+    height: var(--icon-size);
+    border-radius: var(--icon-radius);
+
+    & img {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+  }
+}
+
+// --- 余計なもん消していく部分 ---
+
+body {
+  background-color: transparent;
+}
+
+// 上部「ルームチャット」ヘッダ
+header.MuiPaper-elevation4 {
+  display: none;
+}
+
+// 下部フォームのルート下でheader(メイン・情報等タブ)以外の要素
+form > :not(header) {
+  display: none !important;
+}
+
+// --- バー関係 ---
+
+// スクロールバーを透明にする
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: transparent;
+}
+
+// スクロールバーのつまみ（ハンドル）の色を指定
+::-webkit-scrollbar-thumb {
+  background-color: var(--scroll-bar-color);
+  border-radius: var(--scroll-bar-radius);
+}
+
+// スクロールバーのつまみがホバーされた時の色を指定
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+}
