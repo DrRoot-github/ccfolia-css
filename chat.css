@@ -4,8 +4,7 @@
   --background-color: #444;
   /* メッセージを区切る線の色 */
   --divider-color: #ffffff4a;
-  /* 名前の文字色・サイズ */
-  --name-color: #2dd5ffee;
+  /* 名前の文字サイズ（名前の文字色は標準でいじれるらしい） */
   --name-size: 15px;
   /* 日付の文字色・サイズ */
   --datetime-color: rgb(252, 89, 89);
@@ -30,7 +29,6 @@
 
 .MuiTypography-subtitle2 {
   font-size: var(--name-size);
-  color: var(--name-color) !important;
 }
 
 .MuiTypography-caption {
