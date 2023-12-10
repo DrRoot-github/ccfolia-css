@@ -47,8 +47,8 @@ $textPopup: ".MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation6";
       }
     }
 
-    // index=0を持ってるようなimgは旧ダイス演出のサイコロ画像
-    & img[index="0"] {
+    // indexを持ってるようなimgは旧ダイス演出のサイコロ画像
+    & img[index] {
       width: var(--dice-size);
       height: var(--dice-size);
     }
