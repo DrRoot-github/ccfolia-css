@@ -39,7 +39,7 @@ $textPopup: ".MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation6";
     & > div {
       // 何故かこっちにもshadowやら背景色が設定されてるので打ち消す
       box-shadow: none;
-      background-color: transparent;
+      background: transparent !important;
 
       // フキダシ全体の末弟に高さを決める本文の要素がある
       & > div:last-child {

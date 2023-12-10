@@ -50,12 +50,12 @@ body {
 }
 #root > div > [tabindex="0"] > .MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation6 > div {
   box-shadow: none;
-  background-color: transparent;
+  background: transparent !important;
 }
 #root > div > [tabindex="0"] > .MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation6 > div > div:last-child {
   height: var(--message-height);
 }
-#root > div > [tabindex="0"] > .MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation6 img[index="0"] {
+#root > div > [tabindex="0"] > .MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation6 img[index] {
   width: var(--dice-size);
   height: var(--dice-size);
 }
