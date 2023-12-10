@@ -33,10 +33,21 @@
   --gauge-font-size: 13px;
 }
 
+// 全statsエレメントから直近の共通コンテナ
+// おそらくキャラの数に等しいflexなdivを子に持っている奴のはず
+$rootContainer: ".sc-enrYGu";
+
+// 背景に設定された画像 #rootの孫のheader要素の弟あたりにいる
+$bg: ".sc-hKiFIE";
+
+// statsアイテム1個のroot要素
+$rootStats: ".sc-ezjsFQ";
+
+// ゲージ1本分の親div
+$oneGauge: ".sc-hxyzrr";
+
 #root > div > [tabindex="0"] {
-  // 全statsエレメントから直近の共通コンテナ
-  // おそらくキャラの数に等しいflexなdivを子に持っている奴のはず
-  & > .sc-bwcYJz {
+  & > #{$rootContainer} {
     top: 0;
     display: flex;
     flex-wrap: wrap;
@@ -44,18 +55,16 @@
   }
 
   // ↑の奴以外は邪魔なので消す
-  & > *:not(.sc-bwcYJz) {
+  & > *:not(#{$rootContainer}) {
     display: none;
   }
 }
 
-// 背景に設定された画像を消す #rootの孫のheader要素の弟あたりにいる
-.sc-exqIcj {
+#{$bg} {
   display: none;
 }
 
-// statsアイテム1個のroot要素
-.sc-kBqlQb {
+#{$rootStats} {
   margin-right: 8px;
 
   // アイコンの親div
@@ -89,7 +98,7 @@
 }
 
 // ゲージ1本分の親div
-.sc-gggpLg {
+#{$oneGauge} {
   width: var(--gauge-width);
 
   // ゲージ上の文字関係
