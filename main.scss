@@ -1,3 +1,6 @@
+// 余計なものを消す
+@use "shared";
+
 :root {
   /* ゲージコンテナ(HP,MP等のゲージを収める箱)の幅 */
   /* --gauge-widthの2倍+8にすると、2本まで（HPとMP等）ゲージが横に並ぶ */
@@ -37,9 +40,6 @@
 // おそらくキャラの数に等しいflexなdivを子に持っている奴のはず
 $rootContainer: ".sc-enrYGu";
 
-// 背景に設定された画像 #rootの孫のheader要素の弟あたりにいる
-$bg: ".sc-hKiFIE";
-
 // statsアイテム1個のroot要素
 $rootStats: ".sc-ezjsFQ";
 
@@ -58,10 +58,6 @@ $oneGauge: ".sc-hxyzrr";
   & > *:not(#{$rootContainer}) {
     display: none;
   }
-}
-
-#{$bg} {
-  display: none;
 }
 
 #{$rootStats} {
@@ -126,21 +122,4 @@ $oneGauge: ".sc-hxyzrr";
       height: var(--gauge-height);
     }
   }
-}
-
-// --- その他の余計なものを消す ---
-body {
-  background-color: rgba(0, 0, 0, 0);
-  margin: 0px auto;
-  overflow: hidden;
-}
-
-// 右ペイン
-.MuiPaper-root {
-  display: none;
-}
-
-// right: 375pxを持ってるstatsの祖先がいるので打ち消す
-#root > div > [tabindex="0"] {
-  right: 0 !important;
 }

@@ -1,0 +1,64 @@
+@charset "UTF-8";
+body {
+  background-color: rgba(0, 0, 0, 0);
+  margin: 0px auto;
+  overflow: hidden;
+}
+
+.MuiDrawer-paperAnchorDockedRight {
+  display: none;
+}
+
+.mui-fixed {
+  display: none;
+}
+
+#root > div > [tabindex="0"] {
+  right: 0 !important;
+}
+
+.MuiModal-root {
+  display: none;
+}
+
+#root > div > header + div {
+  display: none;
+}
+
+/* 発言時のセリフポップアップ関連 */
+:root {
+  /* キャラの画像の横幅 */
+  --popup-img-width: 240px;
+  /* サイコロ画像の横幅 */
+  --dice-size: 75px;
+  /* ウィンドウの色 */
+  --window-bg-color: #2e8132;
+  /* ウィンドウにかかってるbox-shadow */
+  --window-box-shadow: none;
+  /* 本文ウィンドウの高さ */
+  --message-height: 80px;
+}
+
+#root > div > [tabindex="0"] > .MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation6 {
+  background-color: var(--window-bg-color);
+  box-shadow: var(--window-box-shadow);
+  max-width: none;
+  right: 16px !important;
+}
+#root > div > [tabindex="0"] > .MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation6 > img {
+  width: var(--popup-img-width);
+}
+#root > div > [tabindex="0"] > .MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation6 > div {
+  box-shadow: none;
+  background-color: transparent;
+}
+#root > div > [tabindex="0"] > .MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation6 > div > div:last-child {
+  height: var(--message-height);
+}
+#root > div > [tabindex="0"] > .MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation6 img[index="0"] {
+  width: var(--dice-size);
+  height: var(--dice-size);
+}
+#root > div > [tabindex="0"] > *:not(.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation6) {
+  display: none;
+}

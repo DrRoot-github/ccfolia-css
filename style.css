@@ -1,4 +1,30 @@
 @charset "UTF-8";
+body {
+  background-color: rgba(0, 0, 0, 0);
+  margin: 0px auto;
+  overflow: hidden;
+}
+
+.MuiDrawer-paperAnchorDockedRight {
+  display: none;
+}
+
+.mui-fixed {
+  display: none;
+}
+
+#root > div > [tabindex="0"] {
+  right: 0 !important;
+}
+
+.MuiModal-root {
+  display: none;
+}
+
+#root > div > header + div {
+  display: none;
+}
+
 :root {
   /* ゲージコンテナ(HP,MP等のゲージを収める箱)の幅 */
   /* --gauge-widthの2倍+8にすると、2本まで（HPとMP等）ゲージが横に並ぶ */
@@ -32,10 +58,6 @@
   width: var(--root-width);
 }
 #root > div > [tabindex="0"] > *:not(.sc-enrYGu) {
-  display: none;
-}
-
-.sc-hKiFIE {
   display: none;
 }
 
@@ -83,18 +105,4 @@
 .sc-hxyzrr > div:last-child > div:last-child {
   background-color: var(--gauge-value-color) !important;
   height: var(--gauge-height);
-}
-
-body {
-  background-color: rgba(0, 0, 0, 0);
-  margin: 0px auto;
-  overflow: hidden;
-}
-
-.MuiPaper-root {
-  display: none;
-}
-
-#root > div > [tabindex="0"] {
-  right: 0 !important;
 }

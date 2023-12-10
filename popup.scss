@@ -1,0 +1,61 @@
+@use "shared";
+
+/* 発言時のセリフポップアップ関連 */
+:root {
+  /* キャラの画像の横幅 */
+  --popup-img-width: 240px;
+
+  /* サイコロ画像の横幅 */
+  --dice-size: 75px;
+
+  /* ウィンドウの色 */
+  --window-bg-color: #2e8132;
+
+  /* ウィンドウにかかってるbox-shadow */
+  --window-box-shadow: none;
+
+  /* 本文ウィンドウの高さ */
+  --message-height: 80px;
+}
+
+// 発言時に下に出てくるフキダシのやつ
+$textPopup: ".MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation6";
+
+#root > div > [tabindex="0"] {
+  & > #{$textPopup} {
+    background-color: var(--window-bg-color);
+    box-shadow: var(--window-box-shadow);
+
+    // 枠全体が左右均等に収まるようにする
+    max-width: none;
+    right: 16px !important;
+
+    // 直下のimgはキャラの画像
+    & > img {
+      width: var(--popup-img-width);
+    }
+
+    // 発言フキダシ全体
+    & > div {
+      // 何故かこっちにもshadowやら背景色が設定されてるので打ち消す
+      box-shadow: none;
+      background-color: transparent;
+
+      // フキダシ全体の末弟に高さを決める本文の要素がある
+      & > div:last-child {
+        height: var(--message-height);
+      }
+    }
+
+    // index=0を持ってるようなimgは旧ダイス演出のサイコロ画像
+    & img[index="0"] {
+      width: var(--dice-size);
+      height: var(--dice-size);
+    }
+  }
+
+  // ゴミ消し
+  & > *:not(#{$textPopup}) {
+    display: none;
+  }
+}

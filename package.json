@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "sass": "sass ./main.scss:./style.css ./chat.scss:./chat.css --no-source-map"
+    "sass": "sass ./main.scss:./style.css ./chat.scss:./chat.css ./popup.scss:./popup.css --no-source-map"
   },
   "author": "",
   "license": "ISC",

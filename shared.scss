@@ -1,0 +1,32 @@
+// 余計なやつ消す為のやつ
+
+body {
+  background-color: rgba(0, 0, 0, 0);
+  margin: 0px auto;
+  overflow: hidden;
+}
+
+// 右ペイン
+.MuiDrawer-paperAnchorDockedRight {
+  display: none;
+}
+
+// ヘッダ
+.mui-fixed {
+  display: none;
+}
+
+// right: 375pxを持ってるstatsの祖先がいるので打ち消す
+#root > div > [tabindex="0"] {
+  right: 0 !important;
+}
+
+// 7日出さないみたいなカスのやつ
+.MuiModal-root {
+  display: none;
+}
+
+// 背景に設定された画像 #rootの孫のheader要素の弟あたりにいる
+#root > div > header + div {
+  display: none;
+}
