@@ -54,6 +54,7 @@ body {
 }
 #root > div > [tabindex="0"] > .MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation6 > div > div:last-child {
   height: var(--message-height);
+  overflow-wrap: break-word;
 }
 #root > div > [tabindex="0"] > .MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation6 img[index] {
   width: var(--dice-size);

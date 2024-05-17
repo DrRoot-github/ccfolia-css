@@ -38,13 +38,13 @@
 
 // 全statsエレメントから直近の共通コンテナ
 // おそらくキャラの数に等しいflexなdivを子に持っている奴のはず
-$rootContainer: ".sc-enrYGu";
+$rootContainer: ".sc-fkmgoA";
 
 // statsアイテム1個のroot要素
-$rootStats: ".sc-ezjsFQ";
+$rootStats: ".sc-bTJQTw";
 
 // ゲージ1本分の親div
-$oneGauge: ".sc-hxyzrr";
+$oneGauge: ".sc-clGGjC";
 
 #root > div > [tabindex="0"] {
   & > #{$rootContainer} {

@@ -44,6 +44,7 @@ $textPopup: ".MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation6";
       // フキダシ全体の末弟に高さを決める本文の要素がある
       & > div:last-child {
         height: var(--message-height);
+        overflow-wrap: break-word;
       }
     }
 
